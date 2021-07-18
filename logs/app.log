@@ -1,0 +1,14 @@
+2021-07-18 21:37:27,831 INFO c.a.d.s.Hooks [main] ************************* Test Execution Started *************************
+2021-07-18 21:37:27,832 INFO c.a.d.s.Hooks [main] Setup : Driver initialization & setup
+2021-07-18 21:37:27,834 INFO c.a.d.f.DriverFactory [main] Get Driver
+2021-07-18 21:37:27,835 INFO c.a.d.f.DriverFactory [main] Operating System : Mac OS X
+2021-07-18 21:37:30,865 INFO c.a.d.f.DriverFactory [main] Get Driver
+2021-07-18 21:37:30,877 INFO c.a.d.f.DriverFactory [main] Get Driver
+2021-07-18 21:37:30,889 INFO c.a.d.f.DriverFactory [main] Get Driver
+2021-07-18 21:37:32,574 INFO c.a.d.p.HomePage [main] In adding Items to wishlist method
+2021-07-18 21:37:38,331 INFO c.a.d.p.HomePage [main] In adding Items to moveTowishlistMethod
+2021-07-18 21:37:39,615 INFO c.a.d.p.HomePage [main] getPriceList method
+2021-07-18 21:37:39,831 INFO c.a.d.p.HomePage [main] Selecting the lowest priced Item
+2021-07-18 21:37:39,880 INFO c.a.d.p.HomePage [main] Verifying Cart
+2021-07-18 21:37:40,311 INFO c.a.d.s.Hooks [main] Cleanup : Driver closer
+2021-07-18 21:37:40,482 INFO c.a.d.s.Hooks [main] ************************* Test Execution Completed *************************

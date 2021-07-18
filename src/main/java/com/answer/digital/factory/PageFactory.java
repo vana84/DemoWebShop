@@ -10,14 +10,9 @@ public class PageFactory {
 
   public BasePage basePage;
   public LandingPage landingPage;
-  public LoginPage loginPage;
   public HomePage homePage;
-//  private RegistrationPage registrationPage;
-  private MyAccountPage myAccountPage;
-  private SearchResultPage searchResultPage;
   private ShoppingCartPage shoppingCartPage;
-  private SummerDressesPage summerDressesPage;
-  private OurStoresPage ourStoresPage;
+
 
   public PageFactory(WebDriver driver, WebDriverWait wait) {
     this.driver = driver;
@@ -31,32 +26,10 @@ public class PageFactory {
   public LandingPage getLandingPage() {
     return (landingPage == null) ? landingPage = new LandingPage(driver, wait) : landingPage;
   }
-
-  public LoginPage getLoginPage() {
-    return (loginPage == null) ? loginPage = new LoginPage(driver, wait) : loginPage;
-  }
   
   public HomePage getHomePage() {
 	    return (homePage == null) ? homePage = new HomePage(driver, wait) : homePage;
 	  }
-
-//  public RegistrationPage getRegistrationPage() {
-//    return (registrationPage == null)
-//        ? registrationPage = new RegistrationPage(driver, wait)
-//        : registrationPage;
-//  }
-
-  public MyAccountPage getMyAccountPage() {
-    return (myAccountPage == null)
-        ? myAccountPage = new MyAccountPage(driver, wait)
-        : myAccountPage;
-  }
-
-  public SearchResultPage getSearchResultPage() {
-    return (searchResultPage == null)
-        ? searchResultPage = new SearchResultPage(driver, wait)
-        : searchResultPage;
-  }
 
   public ShoppingCartPage getShoppingCartPage() {
     return (shoppingCartPage == null)
@@ -64,15 +37,5 @@ public class PageFactory {
         : shoppingCartPage;
   }
 
-  public SummerDressesPage getSummerDressesPage() {
-    return (summerDressesPage == null)
-        ? summerDressesPage = new SummerDressesPage(driver, wait)
-        : summerDressesPage;
-  }
 
-  public OurStoresPage getOurStoresPage() {
-    return (ourStoresPage == null)
-        ? ourStoresPage = new OurStoresPage(driver, wait)
-        : ourStoresPage;
-  }
 }

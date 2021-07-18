@@ -21,6 +21,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
@@ -120,9 +121,7 @@ public class HomePage extends BasePage {
 	  public void getPriceList() throws ParseException {
 		  log.info("getPriceList method");
 		for(int i=1;i<=wishlistTable.size();i++) {
-			System.out.println("hi12");
-			String priceRange = driver.findElement(By.xpath("//tr["+i+"]//td[@class='product-price']")).getText();
-			
+			String priceRange = driver.findElement(By.xpath("//tr["+i+"]//td[@class='product-price']")).getText();		
 			System.out.println(priceRange);
 			if(priceRange.contains(" – ")) {
 					hmin.put(i,(driver.findElement(By.xpath("//tr["+i+"]//td[@class='product-price']//span[1]//bdi"))).getText());
@@ -154,7 +153,7 @@ public class HomePage extends BasePage {
 	  
   
 	  public int finMinVal() {
-		  System.out.println("Finding the min valuue method");
+		  System.out.println("Finding the min value method");
 		  double minValueInMap=(double) (Collections.min(hLatest.values())); 
 	        for (Entry<Integer, Double> entry : hLatest.entrySet()) {  
 	            if (entry.getValue()==minValueInMap) {
@@ -173,6 +172,7 @@ public class HomePage extends BasePage {
 		  int index = finMinVal();
 		  driver.findElement(By.xpath("//tbody[@class='wishlist-items-wrapper']//tr["+index+"]//td[@class='product-add-to-cart']//a")).click();
 		 
+//		  wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@role='alert'])"))));		  
 //		  System.out.println(driver.findElement(By.xpath("//div[@role='alert'])")).getText()); 		  
 //				  Product added to cart successfully
 	  }

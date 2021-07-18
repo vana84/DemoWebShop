@@ -13,7 +13,7 @@ BDD to Test Automation Practice Web Application
 
 #### Clone this repo :
 ```github
-git clone 
+git clone https://github.com/vana84/DemoWebShop.git
 ```
 
 #### Run Scripts:
