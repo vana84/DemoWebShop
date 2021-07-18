@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static org.junit.Assert.assertEquals;
 
 import java.text.ParseException;
 
@@ -23,8 +24,7 @@ public class ShoppingSteps extends BaseSteps {
   
   
   @Given("I add four different products to my wish list")
-  public void addFourDifferentProducts() throws InterruptedException {
-	 Thread.sleep(500);
+  public void addFourDifferentProducts() {
 	  testContext.getPageFactory().getHomePage().addWishlist();
   }
 
@@ -34,10 +34,12 @@ public class ShoppingSteps extends BaseSteps {
   }
 
   @Then("I find total four selected items in my wishlist")
-  public void assertSelectedItemsInWishlist() throws InterruptedException {
-	  Thread.sleep(1000);
-	  int aa = testContext.getPageFactory().getHomePage().getATCLinksWishlist();
-	  System.out.print(aa);
+  public void assertSelectedItemsInWishlist() {
+	  int ItemsWished = testContext.getPageFactory().getHomePage().getATCLinksWishlist();
+	  assertEquals(
+			  "Wrong wish count",
+			  4,
+			  ItemsWished);
   }
 
   @When("I search for lowest price product")

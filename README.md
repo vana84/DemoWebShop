@@ -35,4 +35,4 @@ On successful completion report will be generated under below directory.
 > ````
 
 
->Note : This framework is built & tested on Mac OS X. Though I have added support to run it on Windows, but it's not Tested on it.
+>Note : This framework is built & tested on Mac OS X with default chrome browser. Though I have added support to run it on Windows, but it's not Tested on it.

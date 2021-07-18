@@ -34,10 +34,6 @@ public class HomePage extends BasePage {
 	    this.wait = wait;
 	    PageFactory.initElements(driver, this);
 	  }
-
-//	  @FindBy(xpath = "//ul[contains(@class,'products')]//li[1]")
-//	  WebElement ProductPane1;
-
 	  
 	  @FindBy(xpath = "//img[@alt='TESTSCRIPTDEMO']")
 	  WebElement TSImg; 
@@ -45,10 +41,7 @@ public class HomePage extends BasePage {
 	  
 	  @FindBy(xpath = "//a[contains(@href,'?add_to_wishlist')]//span[text()='Add to wishlist']")
 	  WebElement addWishlistLnk;
-//	  @FindBy(xpath = "//a[contains(@href,'?add_to_wishlist=14')]//span")
-//	  WebElement addWishlistLnk2;
-
-	  
+  
 	  @FindBy(xpath = "//a[@title='Wishlist']") 
 	  WebElement WishlistLnk;
 	  
@@ -77,12 +70,11 @@ public class HomePage extends BasePage {
 	 * @throws InterruptedException */
 	  public void addWishlist() {
 		  log.info("In adding Items to wishlist method");
-//		  JavascriptExecutor js = ((JavascriptExecutor) driver);
-		  Actions actions = new Actions(driver);
+//		  JavascriptExecutor js = ((JavascriptExecutor) driver);		  
 //		  System.out.println(driver.findElements(By.tagName("//a")));
 //		  js.executeScript("window.scrollBy(0,250)");
 //		  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		  
+		  Actions actions = new Actions(driver);
 		  for (int i=1; i<=4; i++) {
 			  WebElement PP = driver.findElement(By.xpath("//ul[contains(@class,'products')]//li["+i+"]"));
 			  actions.moveToElement(PP).perform();
@@ -122,7 +114,7 @@ public class HomePage extends BasePage {
 		  log.info("getPriceList method");
 		for(int i=1;i<=wishlistTable.size();i++) {
 			String priceRange = driver.findElement(By.xpath("//tr["+i+"]//td[@class='product-price']")).getText();		
-			System.out.println(priceRange);
+//			System.out.println(priceRange);
 			if(priceRange.contains(" – ")) {
 					hmin.put(i,(driver.findElement(By.xpath("//tr["+i+"]//td[@class='product-price']//span[1]//bdi"))).getText());
 					hmax.put(i,(driver.findElement(By.xpath("//tr["+i+"]//td[@class='product-price']//span[2]//bdi"))).getText());
@@ -159,10 +151,10 @@ public class HomePage extends BasePage {
 	            if (entry.getValue()==minValueInMap) {
 	            	minPriceIndex = entry.getKey();
 	            	minPrice= entry.getValue();
-	                System.out.println(entry.getKey());
-	                System.out.println(minPrice);
 	            }
 	        }
+	        System.out.println(minPriceIndex);
+            System.out.println(minPrice);	        
 	        return minPriceIndex;
 	  	  
 	  }
@@ -190,7 +182,7 @@ public class HomePage extends BasePage {
 				  "Wrong cart Count",
 				  1,
 				  Integer.parseInt(cartItemCount.getText()));		  
-//		  System.out.println("Amount in Wishlist");
+//		  System.out.println("Amount in wish list");
 //		  System.out.println(hmin.get(minPriceIndex));
 //		  System.out.println("value in Cart");
 //		  System.out.println(driver.findElement(By.xpath("//td[@class='product-price']//span//bdi")).getText());		  
